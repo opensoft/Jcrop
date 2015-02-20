@@ -186,18 +186,19 @@
     //}}}
     function presize($obj, w, h) //{{{
     {
-      var nw = $obj.width(),
-          nh = $obj.height();
+      var nw = $obj.attr('width'),
+          nh = $obj.attr('height');
+
       if ((nw > w) && w > 0) {
         nw = w;
-        nh = (w / $obj.width()) * $obj.height();
+        nh = (w / $obj.attr('width')) * $obj.attr('height');
       }
       if ((nh > h) && h > 0) {
         nh = h;
-        nw = (h / $obj.height()) * $obj.width();
+        nw = (h / $obj.attr('height')) * $obj.attr('width');
       }
-      xscale = $obj.width() / nw;
-      yscale = $obj.height() / nh;
+      xscale = $obj.attr('width') / nw;
+      yscale = $obj.attr('height') / nh;
       $obj.width(nw).height(nh);
     }
     //}}}
